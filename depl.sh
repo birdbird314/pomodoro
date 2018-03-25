@@ -7,6 +7,9 @@ rm -r docs/*
 cp pomodoro.html docs/index.html
 cp -r css docs/
 
+# Copy img
+cp -r img docs/
+
 # Copy js files
 mkdir docs/js
 mkdir docs/js/src
