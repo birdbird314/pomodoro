@@ -34,3 +34,7 @@
   font-size: 3rem;
   margin-top: 10px;
 }
+
+#timer-nav a:hover {
+  opacity: .92;
+}
