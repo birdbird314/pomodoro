@@ -1,0 +1,36 @@
+* {
+  text-align: center;
+}
+
+.main {
+  width: 300px;
+  margin: 30px auto;
+  font-family: 'Cutive Mono', monospace;
+}
+
+.pomodoro {
+  border: 1px solid grey;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+  display: table-cell;
+  vertical-align: middle;
+  color: grey;
+}
+
+.timer {
+  width: 70%;
+  height: 50%;
+  margin: auto;
+}
+
+#timer-screen {
+  font-size: 4rem;
+  margin-bottom: 0px;
+}
+
+#timer-nav {
+  font-size: 3rem;
+  margin-top: 10px;
+}
