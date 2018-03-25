@@ -13,7 +13,7 @@ function CountDown(time, timerElement) {
   }
 
   function countDown(time) {
-    time.printTo(timer);
+    time.printTo(timerElement);
     if (time.isNonZero()) {
       timeout = window.setTimeout(
         () => countDown(time.minusOneSecond()),
