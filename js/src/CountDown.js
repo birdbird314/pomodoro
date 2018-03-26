@@ -1,19 +1,34 @@
 function CountDown(time, timerElement) {
-  var time = time;
+  const initialTime = time;
+  var currentTime = initialTime;
   var timerElement = timerElement;
 
   var timeout;
+  var isInProgress;
 
   this.start = function() {
-    countDown(time);
+    isInProgress = true;
+    countDown(currentTime);
   };
 
-  this.stop = function() {
+  this.pause = function() {
+    isInProgress = false;
     window.clearTimeout(timeout);
+  }
+
+  this.stop = function() {
+    isInProgress = false;
+    window.clearTimeout(timeout);
+    currentTime = initialTime;
+  }
+
+  this.isInProgress = function() {
+    return isInProgress;
   }
 
   function countDown(time) {
     time.printTo(timerElement);
+    currentTime = time;
     if (time.isNonZero()) {
       timeout = window.setTimeout(
         () => countDown(time.minusOneSecond()),
