@@ -19,6 +19,7 @@ function CountDown(time, timerElement) {
   this.stop = function() {
     isInProgress = false;
     currentTime = initialTime;
+    initialTime.printTo(timerElement);
     window.clearTimeout(timeout);
   }
 

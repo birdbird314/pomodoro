@@ -54,21 +54,39 @@ describe('listeners', function() {
     });
 
     it('should stop countdown on click', function() {
-      listeners.stopButtonListener(playPauseButton, timerElement, countdown)();
+      listeners.stopButtonListener(playPauseButton, countdown)();
 
       expect(countdown.stop).toHaveBeenCalled();
     });
 
     it('should change start button icon to start', function() {
-      listeners.stopButtonListener(playPauseButton, timerElement, countdown)();
+      listeners.stopButtonListener(playPauseButton, countdown)();
 
       expect(playPauseButton.className).toEqual('fa fa-play-circle-o');
     });
+  });
 
-    it('should reset timer element', function() {
-      listeners.stopButtonListener(playPauseButton, timerElement, countdown)();
+  describe('cog button on click listener', function() {
+    var dropdown;
 
-      expect(timerElement.textContent).toEqual('00:00');
+    beforeEach(function() {
+      dropdown = { style : {} };
+    });
+
+    it('should show dropdown menu on click', function() {
+      dropdown.style.display = 'none';
+
+      listeners.cogButtonListener(dropdown)();
+
+      expect(dropdown.style.display).toEqual('block');
+    });
+
+    it('should hide dropdown menu on click', function() {
+      dropdown.style.display = 'block';
+
+      listeners.cogButtonListener(dropdown)();
+
+      expect(dropdown.style.display).toEqual('none');
     });
   });
 });

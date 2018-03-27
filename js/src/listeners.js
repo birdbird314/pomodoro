@@ -11,10 +11,14 @@ var listeners = (function() {
       }
   };
 
-  listeners.stopButtonListener = (playPauseButton, timerElement, countdown) => function() {
+  listeners.stopButtonListener = (playPauseButton, countdown) => function() {
     showPlay(playPauseButton)
-    timerElement.textContent = '00:00';
     countdown.stop();
+  };
+
+  listeners.cogButtonListener = (dropdown) => function() {
+    const display = dropdown.style.display;
+    dropdown.style.display = 'block' === display ? 'none' : 'block';
   };
 
   function showPlay(playPauseButton) {
