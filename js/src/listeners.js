@@ -1,7 +1,6 @@
 var listeners = (function() {
   var listeners = {};
 
-  var paused = false;
   listeners.playPauseButtonListener = (playPauseButton, countdown) => function() {
       if (countdown.isInProgress()) {
         showPlay(playPauseButton);

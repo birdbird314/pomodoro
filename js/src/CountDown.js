@@ -18,8 +18,8 @@ function CountDown(time, timerElement) {
 
   this.stop = function() {
     isInProgress = false;
-    window.clearTimeout(timeout);
     currentTime = initialTime;
+    window.clearTimeout(timeout);
   }
 
   this.isInProgress = function() {
