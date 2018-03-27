@@ -14,9 +14,17 @@
       <div class="timer">
         <h1 id="timer-screen">00:00</h1>
         <div id="timer-nav">
-          <a><i id="play-pause-btn" class="fa fa-play-circle-o"></i></a>
-          <a><i id="stop-btn" class="fa fa-stop-circle-o"></i></a>
+          <a><i id="play-pause-btn" class="btn fa fa-play-circle-o"></i></a>
+          <a><i id="stop-btn" class="btn fa fa-stop-circle-o"></i></a>
         </div>
+      </div>
+    </div>
+    <div class="settings">
+      <a><i id="cog-btn" class="btn fa fa-cog"></i></a>
+      <div id="settings-dropdown" class="settings-pane">
+        <form>
+          <input type="number" min="0" max="59" step="1" value="00"> : <input type="number" min="0" max="59" placeholder="00">
+        </form>
       </div>
     </div>
   </div>
