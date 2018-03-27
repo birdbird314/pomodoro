@@ -17,8 +17,8 @@ var listeners = (function() {
   };
 
   listeners.cogButtonListener = (dropdown) => function() {
-    const display = dropdown.style.display;
-    dropdown.style.display = 'block' === display ? 'none' : 'block';
+    const opacity = dropdown.style.opacity.toString();
+    dropdown.style.opacity = "1" === opacity ? 0 : 1;
   };
 
   function showPlay(playPauseButton) {

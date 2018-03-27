@@ -74,19 +74,19 @@ describe('listeners', function() {
     });
 
     it('should show dropdown menu on click', function() {
-      dropdown.style.display = 'none';
+      dropdown.style.opacity = 0;
 
       listeners.cogButtonListener(dropdown)();
 
-      expect(dropdown.style.display).toEqual('block');
+      expect(dropdown.style.opacity).toEqual(1);
     });
 
     it('should hide dropdown menu on click', function() {
-      dropdown.style.display = 'block';
+      dropdown.style.opacity = 1;
 
       listeners.cogButtonListener(dropdown)();
 
-      expect(dropdown.style.display).toEqual('none');
+      expect(dropdown.style.opacity).toEqual(0);
     });
   });
 });
