@@ -9,9 +9,11 @@
   var minutesTextField = document.getElementById('mins-txt');
   var secondsTextField = document.getElementById('secs-txt');
 
+  [minutesTextField, secondsTextField].forEach(field => field.disabled = true);
+
   playPauseButton.onclick = listeners.playPauseButtonListener(playPauseButton, countdown);
   stopButton.onclick = listeners.stopButtonListener(playPauseButton, countdown);
-  cogButton.onclick = listeners.cogButtonListener(dropdown);
+  cogButton.onclick = listeners.cogButtonListener(dropdown, [minutesTextField, secondsTextField]);
   minutesTextField.onchange = listeners.minutesTextFieldListener(minutesTextField, countdown);
   secondsTextField.onchange = listeners.secondsTextFieldListener(secondsTextField, countdown);
 

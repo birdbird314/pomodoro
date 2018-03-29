@@ -68,15 +68,19 @@ describe('listeners', function() {
 
   describe('cog button on click listener', function() {
     var dropdown;
+    var firstTextField;
+    var secondTextField;
 
     beforeEach(function() {
       dropdown = { style : {} };
+      firstTextField = {};
+      secondTextField = {};
     });
 
     it('should show dropdown menu on click', function() {
       dropdown.style.opacity = 0;
 
-      listeners.cogButtonListener(dropdown)();
+      listeners.cogButtonListener(dropdown, [firstTextField, secondTextField])();
 
       expect(dropdown.style.opacity).toEqual(1);
     });
@@ -84,9 +88,20 @@ describe('listeners', function() {
     it('should hide dropdown menu on click', function() {
       dropdown.style.opacity = 1;
 
-      listeners.cogButtonListener(dropdown)();
+      listeners.cogButtonListener(dropdown, [firstTextField, secondTextField])();
 
       expect(dropdown.style.opacity).toEqual(0);
+    });
+
+    it('should disable enabled txt fields on click', function() {
+      dropdown.style.opacity = 1;
+      firstTextField.disabled = false;
+      secondTextField.disabled = false;
+
+      listeners.cogButtonListener(dropdown, [firstTextField, secondTextField])();
+
+      expect(firstTextField.disabled).toBe(true);
+      expect(secondTextField.disabled).toBe(true);
     });
   });
 

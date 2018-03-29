@@ -16,9 +16,10 @@ var listeners = (function() {
     countdown.stop();
   };
 
-  listeners.cogButtonListener = (dropdown) => function() {
+  listeners.cogButtonListener = (dropdown, textFields) => function() {
     const opacity = dropdown.style.opacity.toString();
     dropdown.style.opacity = "1" === opacity ? 0 : 1;
+    textFields.forEach(field => field.disabled = !field.disabled);
   };
 
   listeners.minutesTextFieldListener = (minutesTextField, countdown) => function() {
