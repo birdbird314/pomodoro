@@ -12,6 +12,14 @@ function Time(mins, secs) {
       : new Time(mins - 1, 59);
   };
 
+  this.withMins = function(mins) {
+    return new Time(mins, secs);
+  }
+
+  this.withSecs = function(secs) {
+    return new Time(mins, secs);
+  }
+
   this.isZero = function() {
     return mins == 0 && secs == 0;
   };

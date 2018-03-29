@@ -1,22 +1,22 @@
 * {
   text-align: center;
+  color: grey;
+  font-family: 'Cutive Mono', monospace;
 }
 
 .main {
   width: 300px;
   margin: 30px auto;
-  font-family: 'Cutive Mono', monospace;
 }
 
 .pomodoro {
-  border: 1px solid grey;
+  border: 3px solid #ddd;
   border-radius: 50%;
   height: 300px;
   width: 300px;
   margin: 0 auto;
   display: table-cell;
   vertical-align: middle;
-  color: grey;
 }
 
 .timer {
@@ -27,14 +27,57 @@
 
 #timer-screen {
   font-size: 4rem;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 #timer-nav {
   font-size: 3rem;
-  margin-top: 10px;
+  margin-top: .5rem;
 }
 
-#timer-nav a:hover {
-  opacity: .92;
+.settings {
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-align: right;
+}
+
+.settings-pane {
+  border: 3px solid #ddd;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 0 1.5rem 0 1.5rem;
+  font-size: 2rem;
+  transition: opacity .5s;
+}
+
+.settings-pane input {
+  border: none;
+  border-bottom: 2px solid #ddd;
+  display: inline;
+  width: 3rem;
+  transition: width 1s;
+  font-size: 2rem;
+}
+
+.settings-pane input:focus {
+  outline: 0;
+  width: 4rem;
+}
+
+.settings-pane input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn {
+  opacity: .5;
+  transition: opacity .3s;
+}
+
+.btn:hover {
+  opacity: .9;
+}
+
+#settings-dropdown {
+  opacity: 0;
 }

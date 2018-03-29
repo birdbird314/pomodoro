@@ -1,7 +1,6 @@
 var listeners = (function() {
   var listeners = {};
 
-  var paused = false;
   listeners.playPauseButtonListener = (playPauseButton, countdown) => function() {
       if (countdown.isInProgress()) {
         showPlay(playPauseButton);
@@ -12,11 +11,25 @@ var listeners = (function() {
       }
   };
 
-  listeners.stopButtonListener = (playPauseButton, timerElement, countdown) => function() {
+  listeners.stopButtonListener = (playPauseButton, countdown) => function() {
     showPlay(playPauseButton)
-    timerElement.textContent = '00:00';
     countdown.stop();
   };
+
+  listeners.cogButtonListener = (dropdown) => function() {
+    const opacity = dropdown.style.opacity.toString();
+    dropdown.style.opacity = "1" === opacity ? 0 : 1;
+  };
+
+  listeners.minutesTextFieldListener = (minutesTextField, countdown) => function() {
+    const minutes = parseInt(minutesTextField.value);
+    countdown.setMins(minutes);
+  }
+
+  listeners.secondsTextFieldListener = (secondsTextField, countdown) => function() {
+    const seconds = parseInt(secondsTextField.value);
+    countdown.setSecs(seconds);
+  }
 
   function showPlay(playPauseButton) {
     playPauseButton.className = playPauseButton.className.replace(/fa-.*-circle-o/, 'fa-play-circle-o');
