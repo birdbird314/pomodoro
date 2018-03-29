@@ -89,4 +89,40 @@ describe('listeners', function() {
       expect(dropdown.style.opacity).toEqual(0);
     });
   });
+
+  describe('minutes text field on change', function() {
+    var minutesTextField;
+    var countdown;
+
+    beforeEach(function() {
+      minutesTextField = {};
+      countdown = jasmine.createSpyObj('countdown', ['setMins', 'updateIfStopped']);
+    });
+
+    it('should change initial mins of countdown on change', function() {
+      minutesTextField.value = "03";
+
+      listeners.minutesTextFieldListener(minutesTextField, countdown)();
+
+      expect(countdown.setMins).toHaveBeenCalledWith(3);
+    });
+  });
+
+  describe('seconds text field on change', function() {
+    var secondsTextField;
+    var countdown;
+
+    beforeEach(function() {
+      secondsTextField = {};
+      countdown = jasmine.createSpyObj('countdown', ['setSecs']);
+    });
+
+    it('should change initial secs of countdown on change', function() {
+      secondsTextField.value = "03";
+
+      listeners.secondsTextFieldListener(secondsTextField, countdown)();
+
+      expect(countdown.setSecs).toHaveBeenCalledWith(3);
+    });
+  });
 });

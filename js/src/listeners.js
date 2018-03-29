@@ -21,6 +21,16 @@ var listeners = (function() {
     dropdown.style.opacity = "1" === opacity ? 0 : 1;
   };
 
+  listeners.minutesTextFieldListener = (minutesTextField, countdown) => function() {
+    const minutes = parseInt(minutesTextField.value);
+    countdown.setMins(minutes);
+  }
+
+  listeners.secondsTextFieldListener = (secondsTextField, countdown) => function() {
+    const seconds = parseInt(secondsTextField.value);
+    countdown.setSecs(seconds);
+  }
+
   function showPlay(playPauseButton) {
     playPauseButton.className = playPauseButton.className.replace(/fa-.*-circle-o/, 'fa-play-circle-o');
   }

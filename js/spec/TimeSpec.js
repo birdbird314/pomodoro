@@ -40,6 +40,22 @@ describe("Time", function() {
 
       expect(element.textContent).toEqual('00:59');
     });
+
+    it("should return time with given minutes", function() {
+      time = new Time(1, 0);
+
+      time.withMins(2).printTo(element);
+
+      expect(element.textContent).toEqual('02:00');
+    })
+
+    it("should return time with given seconds", function() {
+      time = new Time(0, 1);
+
+      time.withSecs(2).printTo(element);
+
+      expect(element.textContent).toEqual('00:02');
+    })
   });
 
   describe("Zero time recognition", function() {
