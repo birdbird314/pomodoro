@@ -1,5 +1,5 @@
-var listeners = (function() {
-  var listeners = {};
+let listeners = (function() {
+  let listeners = {};
 
   listeners.playPauseButtonListener = (playPauseButton, countdown) => function() {
       if (countdown.isInProgress()) {

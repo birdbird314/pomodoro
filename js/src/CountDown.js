@@ -1,14 +1,12 @@
-function CountDown(time, timerElement) {
+function CountDown(initialTime, timerElement) {
   const STARTED = 'started';
   const PAUSED = 'paused';
   const STOPPED = 'stopped'
 
-  var initialTime = time;
-  var currentTime = initialTime;
-  var timerElement = timerElement;
-  var state = STOPPED;
+  let currentTime = initialTime;
+  let state = STOPPED;
 
-  var timeout;
+  let timeout;
 
   this.start = function() {
     state = STARTED;

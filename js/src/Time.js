@@ -1,7 +1,4 @@
 function Time(mins, secs) {
-  var mins = mins;
-  var secs = secs;
-
   this.printTo = function(element) {
     element.textContent = `${addPaddingZero(mins)}:${addPaddingZero(secs)}`;
   };
